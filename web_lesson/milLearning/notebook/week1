@@ -10,4 +10,15 @@ train_X,test_X, train_y, test_y = train_test_split(train,
                                                    target,  
                                                    test_size = 0.2,  
                                                    random_state = 0) 
-4.
+4.from sklearn.cross_validation import StratifiedKFold
+from sklearn import linear_model
+lineaM = linear_model.LinearRegression()
+scores = []
+kfold = StratifiedKFold(y=prices,n_folds=8,random_state=1)
+
+for k, (train,test) in enumerate(kfold):
+    lineaM.train.fit(features.as_matrix()[train],prices.as_matrix()[train])
+    y_pred = lineaM.predict(features.as_matrix()[test])
+    score = r2_score(prices.as_matrix()[test],y_pred)
+    scores.append(score)
+print(scores)  
