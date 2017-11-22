@@ -10,7 +10,8 @@ train_X,test_X, train_y, test_y = train_test_split(train,
                                                    target,  
                                                    test_size = 0.2,  
                                                    random_state = 0) 
-4.from sklearn.cross_validation import StratifiedKFold
+4.线性回归
+from sklearn.cross_validation import StratifiedKFold
 from sklearn import linear_model
 lineaM = linear_model.LinearRegression()
 scores = []
@@ -22,3 +23,25 @@ for k, (train,test) in enumerate(kfold):
     score = r2_score(prices.as_matrix()[test],y_pred)
     scores.append(score)
 print(scores)  
+多项式回归 ---成绩提高！
+from sklearn.metrics import r2_score
+import numpy as np
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn import linear_model
+
+lineaM = linear_model.LinearRegression()
+polyM = PolynomialFeatures(degree=1)
+scores = []
+kfold = StratifiedKFold(y=prices,n_folds=8,random_state=1)
+
+for k, (train,test) in enumerate(kfold):
+    xx_train = polyM.fit_transform(features.as_matrix()[train])
+    yy_train = prices.as_matrix()[train]
+    xx_test = polyM.fit_transform(features.as_matrix()[test])
+    yy_test = prices.as_matrix()[test]
+    lineaM.fit(xx_train,yy_train)
+    score = lineaM.score(xx_test,yy_test)
+    scores.append(score)
+print(scores) 
+5. k-folds
+https://github.com/basicv8vc/Python-Machine-Learning-zh/blob/master/%E7%AC%AC%E5%85%AD%E7%AB%A0/ch6_section2.md
