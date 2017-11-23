@@ -45,3 +45,12 @@ for k, (train,test) in enumerate(kfold):
 print(scores) 
 5. k-folds
 https://github.com/basicv8vc/Python-Machine-Learning-zh/blob/master/%E7%AC%AC%E5%85%AD%E7%AB%A0/ch6_section2.md
+6.python3.x中移除了cPickle模块，可以使用pickle模块代替。最终我们将会有一个透明高效的模块。
+python 2.x
+import cPickle as pickle
+pickle.load(file)
+python 3.x
+import pickle as pickle
+pickle.load(file,encoding='iso-8859-1')
+http://blog.csdn.net/programmer_wei/article/details/50994318
+http://blog.csdn.net/programmer_wei/article/details/50994318
