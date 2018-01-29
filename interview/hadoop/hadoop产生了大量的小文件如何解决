@@ -43,4 +43,13 @@ MR:job.setOutputFormatClass(SequenceFileOutputFormat.class);
 
 3.CombineFileInputFormat
 CombineFileInputFormat是一种新的inputformat，用于将多个文件合并成一个单独的split，另外，它会考虑数据的存储位置。
-job.setInputFormatClass(CombineSmallfileInputFormat.class);
+mr:job.setInputFormatClass(CombineSmallfileInputFormat.class);
+
+hive:-- 设置文件合并
+set abaci.is.dag.job=false;
+set hive.merge.mapredfiles=true;
+set mapred.combine.input.format.local.only=false;
+set hive.merge.smallfiles.avgsize=100000000;
+
+4.sparksql也会产生大量的小文件
+解决办法：运行spark程序的时候，使用参数spark.sql.shuffle.partitions=10即可，这样只产生10个output
