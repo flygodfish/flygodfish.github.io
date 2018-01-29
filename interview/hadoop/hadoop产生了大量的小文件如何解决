@@ -1,0 +1,46 @@
+1.HAR
+ Hadoop Archive或者HAR，是一个高效地将小文件放入HDFS块中的文件存档工具，它能够将多个小文件打包成一个HAR文件，这样在减少namenode内存使用的同时，仍然允许对文件进行透明的访问。
+ 
+对某个目录/foo/bar下的所有小文件存档成/outputdir/ zoo.har：
+hadoop archive -archiveName zoo.har -p /foo/bar /outputdir
+
+g4t7470_[srvc_ima_platform@g4t7470 ~]$ hdfs dfs -ls /EA/sales/ea_sls.db/test_sls_opty
+Found 2 items
+-rwxr-x---   3 srvc_ima_platform srvc_ima_platform     329719 2018-01-29 03:35 /EA/sales/ea_sls.db/test_sls_opty/000000_0
+drwxr-x---   - srvc_ima_platform srvc_ima_platform          0 2018-01-29 03:42 /EA/sales/ea_sls.db/test_sls_opty/zoo.har
+
+这个是test_sls_opty HIVE table.
+然后我将/EA/sales/ea_sls.db/test_sls_opty/000000_0删除
+
+g4t7470_[srvc_ima_platform@g4t7470 ~]$ hdfs dfs -ls har:///EA/sales/ea_sls.db/test_sls_opty/zoo.har
+Found 1 items
+-rw-r-----   3 srvc_ima_platform srvc_ima_platform     329719 2018-01-29 03:35 har:///EA/sales/ea_sls.db/test_sls_opty/zoo.har/000000_0
+g4t7470_[srvc_ima_platform@g4t7470 ~]$ hdfs dfs -rmr /EA/sales/ea_sls.db/test_sls_opty/000000_0
+rmr: DEPRECATED: Please use 'rm -r' instead.
+18/01/29 03:44:40 INFO fs.TrashPolicyDefault: Moved: 'hdfs://HAHDPITG/EA/sales/ea_sls.db/test_sls_opty/000000_0' to trash at: hdfs://HAHDPITG/user/srvc_ima_platform/.Trash/Current/EA/sales/ea_sls.db/test_sls_opty/000000_0
+g4t7470_[srvc_ima_platform@g4t7470 ~]$ hdfs dfs -ls /EA/sales/ea_sls.db/test_sls_opty
+Found 1 items
+drwxr-x---   - srvc_ima_platform srvc_ima_platform          0 2018-01-29 03:42 /EA/sales/ea_sls.db/test_sls_opty/zoo.har
+
+我仍然能使用hive的select的语句查询出hive表的内容！
+
+HAR还有一些缺陷：第一，一旦创建，Archives便不可改变。要增加或移除里面的文件，必须重新创建归档文件。第二，要归档的文件名中不能有空格，否则会抛出异常，可以将空格用其他符号替换(使用-Dhar.space.replacement.enable=true 和-Dhar.space.replacement参数)。第三，存档文件不支持压缩。
+
+
+2.Sequence file
+创建sequence file的过程可以使用mapreduce工作方式完成，对于index，需要改进查找算法
+
+SEQUENCEFILE将数据以<key,value>的形式序列化到文件中。序列化和反序列化使用Hadoop 的标准的Writable 接口实现,优势是文件和Hadoop api中的mapfile是相互兼容的。。  
+key为空，用value 存放实际的值， 这样可以避免map 阶段的排序过程。  
+三种压缩选择：NONE, RECORD, BLOCK。 Record压缩率低，一般建议使用BLOCK压缩。使用时设置参数，  
+HIVE:SET hive.exec.compress.output=true;  
+SET io.seqfile.compression.type=BLOCK; -- NONE/RECORD/BLOCK  
+create table test2(str STRING)  STORED AS SEQUENCEFILE; 
+
+MR:job.setOutputFormatClass(SequenceFileOutputFormat.class);
+优缺点：对小文件的存取都比较自由，也不限制用户和文件的多少，但是该方法不能使用append方法，所以适合一次性写入大量小文件的场景
+
+
+3.CombineFileInputFormat
+CombineFileInputFormat是一种新的inputformat，用于将多个文件合并成一个单独的split，另外，它会考虑数据的存储位置。
+job.setInputFormatClass(CombineSmallfileInputFormat.class);
