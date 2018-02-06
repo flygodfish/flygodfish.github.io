@@ -1,1 +1,8 @@
+1.客户端提交作业
+2.找到一个nodemanager，启动ApplicationMaster
+3.启动AM后，根据Map输入得到分片信息
+4.向ersourcemanager申请资源
+5.得到资源后在各个nodemanager上启动各个任务（map,reduce等）
 
+
+参考网址：http://blog.csdn.net/tanggao1314/article/details/51275812

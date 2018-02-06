@@ -1,0 +1,15 @@
+第一次握手：
+Clinet发送 SYN=1 seq=J（随机产生的） 给Server，Client进入SYN_SENT状态
+
+第二次握手：
+Server收到CLIENT的SYN=1，发出确认ACK=1和ack=J+1(J是Client发的)，同时再发seq=K(Server随机产生的),Server进入SYN_RCVD状态
+
+第三次握手：
+Client节接受到后，checkACK是否1,ack是否J+1,如果正确，发送ack=K+1给Server,ACK=1,Client进入ESTABLESED状态
+Server收到后，检查ack是否为K+1,如果正确，进入ESTABLESED状态，
+
+三次后，就可以传输数据了！
+
+
+
+参考网站;http://blog.csdn.net/sssnmnmjmf/article/details/68486261

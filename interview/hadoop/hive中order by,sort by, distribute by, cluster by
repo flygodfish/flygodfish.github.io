@@ -1,1 +1,13 @@
+order by : 
+对查询的结果做一次全排序。
+只有一个reduce进行处理（不适合大数据量处理）
 
+sort by :
+对每个reduce的数据进行排序
+
+distribute by : 
+按照字段的值划分reduce的数量，一般与sort by一起使用
+
+cluster by :
+cluster by columnA 等同于 distribute by columnA sort by columnA desc
+注：cluster by 不能asc只能降序
