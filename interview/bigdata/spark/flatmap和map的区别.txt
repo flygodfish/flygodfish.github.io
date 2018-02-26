@@ -1,0 +1,4 @@
+参考网站：http://blog.csdn.net/samhacker/article/details/41927567
+
+flatmap最后只会生成一个对象（他比map最后多了一步合并）
+而map会没有一行生成一个对象

@@ -1,0 +1,5 @@
+参考网站：https://www.cnblogs.com/skywang12345/p/3324958.html
+
+equals一般比较值，但是如果不重写的话就是比较地址（==）
+
+hashCode一般使用hashmap，hashtable,hashset才要重写，获得散列值

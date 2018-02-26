@@ -1,0 +1,13 @@
+参考网站:https://www.cnblogs.com/jechedo/p/5732951.html
+
+
+全称：弹性分布式数据集
+
+RDD是只读的，分区记录的集合。
+
+RDD存储的不是真实的数据，只存储单个分区的读取方法和真实数据的分区信息。
+
+数据的读取是发生在运行的TASK中，也就是和在任务分发的Executor上运行的。
+
+
+HDFS -> HADOOPRDD（读取数据）-> MAPPARTITIONS(transfer) -> ShuffledRDD(action) -> hdfs

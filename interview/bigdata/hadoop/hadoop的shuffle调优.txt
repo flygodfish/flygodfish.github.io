@@ -1,0 +1,5 @@
+1.map产生大量的数据时候，调大环形内存kvbuffer,默认100M
+2.在map端进行操作的时候少用复杂的函数（占据内存的函数）
+3.设置Combiner
+4.设置一个压缩格式 mapred.map.output.compression.codec GzipCodec，LzoCodec，BZip2Codec，LzmaCodec
+5.map产生大量的数据时候，reduce的copy阶段可以调大并行接受的文件数

@@ -1,0 +1,9 @@
+参考网站：https://www.cnblogs.com/shishanyuan/archive/2015/08/19/4721326.html
+https://www.cnblogs.com/bonelee/p/6042263.html
+
+yarn-client的运行：
+启动Sparkjob后，会启动对应的Driver进程，同事初始化SparkContext（创建DAGSheduler和TASKScheduler）
+Driver进程像YARN集群resourcemanager申请启动ApplicationMaster，
+Resourcemanager会选择一个Nodemanager启动AM，然后与SparkContext联系进行资源的分配
+SparkContext一旦初始化号，与AM通讯，像RM申请资源
+RM就会分配资源到各个nodemanager启动容器contianer,启动任务。

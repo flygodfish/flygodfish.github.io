@@ -1,0 +1,9 @@
+参考网站：http://blog.csdn.net/nisjlvhudy/article/details/47175705
+
+主要的区别：
+HIVE , 传统数据库
+存储位置：HDFS ，本地或RAW DEVICE
+数据格式：用户定义，系统定义
+执行:MR , Executor
+执行延迟：高 ， 低
+数据规模：大 ， 小

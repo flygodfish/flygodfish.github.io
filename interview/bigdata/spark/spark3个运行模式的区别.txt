@@ -1,0 +1,11 @@
+参考网址：https://www.cnblogs.com/chushiyaoyue/p/7093695.html
+http://blog.csdn.net/swing2008/article/details/60869183
+
+standalone:
+Driver就在运行的Master节点上，也可是本地的Client
+
+Yarn-CLient
+Driver直接在客户端本地运行
+
+Yarn-Cluster
+Driver会在yarn集群上找个节点启动，与Client的本质区别就是需要通信才能了解任务的执行进度，并且启动了Job后可以关闭也不影响整个任务的运行。但是Client是不能关闭的
