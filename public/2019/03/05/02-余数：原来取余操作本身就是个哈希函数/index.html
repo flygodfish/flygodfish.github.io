@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, Study, GodFish">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="My Web Life" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato|Roboto+Condensed|Skranji|Ubuntu|Ubuntu+Mono">
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>02 | 余数：原来取余操作本身就是个哈希函数  | My Web Life</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">My Web Life</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/05/02-余数：原来取余操作本身就是个哈希函数/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="God Fish">
+       <meta itemprop="description" content>
+       <meta itemprop="image" content="/images/touxiang1.jpeg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="My Web Life">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">02 | 余数：原来取余操作本身就是个哈希函数 </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-03-05T18:07:45+08:00">2019-03-05 18:07:45</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络学习/" itemprop="url" rel="index"><span itemprop="name">网络学习</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络学习/极客时间/" itemprop="url" rel="index"><span itemprop="name">极客时间</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络学习/极客时间/程序员的数学基础课/" itemprop="url" rel="index"><span itemprop="name">程序员的数学基础课</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>余数总是在一个固定的范围内。<br>余数的应用场景，WEB分页，散列函数，加密算法，也有循环冗余校验等</p>
+<a id="more"></a>
+<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>余数总是在一个固定的范围内。<br>余数的应用场景WEB分页，散列函数，加密算法，也有循环冗余校验等</p>
+<h1 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h1><h2 id="当1900年1月1日为周三时，这天后的第10000天是周几？"><a href="#当1900年1月1日为周三时，这天后的第10000天是周几？" class="headerlink" title="当1900年1月1日为周三时，这天后的第10000天是周几？"></a>当1900年1月1日为周三时，这天后的第10000天是周几？</h2><p>思路：<br>10000/7的余数是 4<br>那么1900年1月1日后的10000天就是周3+4天那就是周7</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">"10000/7 的余数 ："</span> + <span class="number">10000</span>%<span class="number">7</span>);</span><br><span class="line"></span><br><span class="line">		SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>);</span><br><span class="line">		Date date = sdf.parse(<span class="string">"1991-01-01"</span>);</span><br><span class="line">		Calendar  ca = Calendar.getInstance();</span><br><span class="line">		ca.setTime(date);</span><br><span class="line">		<span class="keyword">int</span> weekday=ca.get(Calendar.DAY_OF_WEEK);</span><br><span class="line">		System.out.println(<span class="string">"1991-01-01 是周几 ："</span>+weekday);</span><br><span class="line"></span><br><span class="line">		ca.add(Calendar.DATE, <span class="number">10000</span>);</span><br><span class="line">		<span class="keyword">int</span> dt = ca.get(Calendar.DAY_OF_WEEK);</span><br><span class="line">		System.out.println(<span class="string">"1991-01-01 后的10000天 是周几 ："</span>+dt);</span><br><span class="line">	&#125; <span class="keyword">catch</span> (ParseException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="基本内容"><a href="#基本内容" class="headerlink" title="基本内容"></a>基本内容</h1><h2 id="同余定理"><a href="#同余定理" class="headerlink" title="同余定理"></a>同余定理</h2><p>基本概念：<br>数论中的重要概念。给定一个正整数m，如果两个整数a和b满足a-b能够被m整除，即(a-b)/m得到一个整数，那么就称整数a与b对模m同余，记作a≡b(mod m)。对模m同余是整数的一个等价关系。</p>
+<p>举例说明：<br>今天是星期一，从今天开始的 100 天里，都有多少个星期呢？你拿 100 除以 7，得到商 14 余 2，也就是说这 100 天里有 14 周多 2 天。<br>换个角度看，我们可以说，这 100 天里，你的第 1 天、第 8 天、第 15 天等等，在余数的世界里都被认为是同一天，因为它们的余数都是 1，都是星期一.<br>同理，第 2 天、第 9 天、第 16 天余数都是 2，它们都是星期二。</p>
+<p>结论：<br>同余定理其实就是用来分类的</p>
+<h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2><p>基本概念：<br>任意长度的输入，通过哈希算法，压缩为某一固定长的输出。</p>
+<p>举例说明：<br>有100万调数据需要存放，为了实现快速的写入和读取。<br>可以使用hash。好处是不用将数据都存在一个连续的地址空间。<br>可以开辟多个连续地址空间，通过余数，将任意数值转换为有限范围内的一个数值，<br>然后根据这个数值，确定新存放的地址空间。</p>
+<p>扩充说明：<br>可以增加一个最大值，来增加它散列的随机程度。<br>假如： 原本是 1 %9 = 1 存放到1号地址空间<br>那么现在 （1 + 590199） % 9 = 7 现在就存放到了7号地址空间<br>像这样的场景一般用于加密算法，mapreduce的数据分发，记录的高速查询和定位等</p>
+<h2 id="加密算法"><a href="#加密算法" class="headerlink" title="加密算法"></a>加密算法</h2><p>自己定义一个加密算法，加密规则：<br>1.先对每个三位数的个、十和百位数，都加上一个较大的随机数。<br>2.然后将每位上的数都除以9，用所得的余数代替原有的个、十、百位数<br>3.最后将第一位和第三位交换</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//加密</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">encrypt_str</span><span class="params">(<span class="keyword">int</span> org)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fix_bigint = <span class="number">298357</span>;</span><br><span class="line">	String org_s = String.valueOf(org);</span><br><span class="line">	<span class="keyword">int</span> bai = Integer.valueOf(String.valueOf(org_s.charAt(<span class="number">0</span>)));</span><br><span class="line">	<span class="keyword">int</span> shi = Integer.valueOf(String.valueOf(org_s.toCharArray()[<span class="number">1</span>]));</span><br><span class="line">	<span class="keyword">int</span> ge = Integer.valueOf(String.valueOf(org_s.toCharArray()[<span class="number">2</span>]));</span><br><span class="line">	<span class="keyword">int</span> new_bai = (bai + fix_bigint) % <span class="number">9</span>;</span><br><span class="line">	<span class="keyword">int</span> new_shi = (shi + fix_bigint) % <span class="number">9</span>;</span><br><span class="line">	<span class="keyword">int</span> new_ge = (ge + fix_bigint) % <span class="number">9</span>;</span><br><span class="line">	String result = String.valueOf(new_ge) + String.valueOf(new_shi) + String.valueOf(new_bai);</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">yu_count</span><span class="params">(<span class="keyword">int</span> shi, <span class="keyword">int</span> base)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> new_shi = shi;</span><br><span class="line">	<span class="keyword">if</span>(shi&lt; base)&#123;</span><br><span class="line">		new_shi = <span class="number">9</span> - base + shi;</span><br><span class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span>(shi&gt; base)&#123;</span><br><span class="line">		new_shi = shi - base;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		new_shi = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> new_shi;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//解密</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">dencrypt_str</span><span class="params">(<span class="keyword">int</span> org)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fix_bigint = <span class="number">298357</span>;</span><br><span class="line">	String org_s = String.valueOf(org);</span><br><span class="line">	<span class="keyword">int</span> bai = Integer.valueOf(String.valueOf(org_s.charAt(<span class="number">0</span>)));</span><br><span class="line">	<span class="keyword">int</span> shi = Integer.valueOf(String.valueOf(org_s.toCharArray()[<span class="number">1</span>]));</span><br><span class="line">	<span class="keyword">int</span> ge = Integer.valueOf(String.valueOf(org_s.toCharArray()[<span class="number">2</span>]));</span><br><span class="line">	<span class="keyword">int</span> base = <span class="number">298357</span> % <span class="number">9</span>;</span><br><span class="line">	<span class="keyword">int</span> new_bai = yu_count(bai, base);</span><br><span class="line">	<span class="keyword">int</span> new_shi = yu_count(shi, base);</span><br><span class="line">	<span class="keyword">int</span> new_ge = yu_count(ge, base);</span><br><span class="line"></span><br><span class="line">	String result = String.valueOf(new_ge) + String.valueOf(new_shi) + String.valueOf(new_bai);</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h1><h2 id="生活和编程中哪些用到了余数思想？"><a href="#生活和编程中哪些用到了余数思想？" class="headerlink" title="生活和编程中哪些用到了余数思想？"></a>生活和编程中哪些用到了余数思想？</h2><p>mapreduce，reduce端的partition</p>
+<p>网上的答案：</p>
+<p>生活中的话，闰年的计算就是典型的余数决定了</p>
+<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><h2 id="闰年"><a href="#闰年" class="headerlink" title="闰年"></a>闰年</h2><p>闰年是能被4整除但是不能被100整除，但是能被400整除。</p>
+<h3 id="判断那年是闰年"><a href="#判断那年是闰年" class="headerlink" title="判断那年是闰年"></a>判断那年是闰年</h3><figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">is_runnian</span><span class="params">(String nian)</span></span>&#123;</span><br><span class="line">	<span class="keyword">boolean</span> flag =<span class="keyword">false</span>;</span><br><span class="line">	<span class="keyword">int</span> int_nian = Integer.valueOf(nian);</span><br><span class="line">	<span class="keyword">if</span>((int_nian % <span class="number">4</span> ==<span class="number">0</span> &amp;&amp; int_nian % <span class="number">100</span> !=<span class="number">0</span>) || int_nian % <span class="number">400</span> == <span class="number">0</span>)&#123;</span><br><span class="line">		flag = <span class="keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p><img src="/2019/03/05/02-余数：原来取余操作本身就是个哈希函数/lesson2.jpg" alt></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/计算机/" rel="tag"><i class="fas fa-tags"></i>计算机</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/03/05/01-二进制：不了解计算机的源头，你学什么编程/" rel="next" title="01 | 二进制：不了解计算机的源头，你学什么编程"><i class="fas fa-angle-left"></i><span class="nav-title">01 | 二进制：不了解计算机的源头，你学什么编程</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2019/03/06/03-迭代法：不用编程语言的自带函数，你会如何计算平方根/" rel="prev" title="03 | 迭代法：不用编程语言的自带函数，你会如何计算平方根?"><span class="nav-title">03 | 迭代法：不用编程语言的自带函数，你会如何计算平方根?</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/touxiang1.jpeg" alt="God Fish">
+  
+  <h1 class="author-name">God Fish</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">22</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">6</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">8</a></div>
+    </div>
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#摘要"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#疑问"><span class="toc-text">疑问</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#当1900年1月1日为周三时，这天后的第10000天是周几？"><span class="toc-text">当1900年1月1日为周三时，这天后的第10000天是周几？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#基本内容"><span class="toc-text">基本内容</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#同余定理"><span class="toc-text">同余定理</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#哈希"><span class="toc-text">哈希</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#加密算法"><span class="toc-text">加密算法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#思考题"><span class="toc-text">思考题</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#生活和编程中哪些用到了余数思想？"><span class="toc-text">生活和编程中哪些用到了余数思想？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#扩展"><span class="toc-text">扩展</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#闰年"><span class="toc-text">闰年</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#判断那年是闰年"><span class="toc-text">判断那年是闰年</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:youremail@youremailhost" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/" target="_blank">Weibo</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://developer.mozilla.org/" target="_blank">MDN</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://mozilla.github.io/nunjucks/" target="_blank">Nunjucks</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">God Fish</span><span class="year"><i class="far fa-copyright"></i>2019 - 2019</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

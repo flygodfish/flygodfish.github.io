@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, Study, GodFish">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="My Web Life" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato|Roboto+Condensed|Skranji|Ubuntu|Ubuntu+Mono">
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>04 | 数学归纳法：如何用数学归纳提升代码的运行效率？ | My Web Life</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">My Web Life</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/07/04-数学归纳法：如何用数学归纳提升代码的运行效率？/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="God Fish">
+       <meta itemprop="description" content>
+       <meta itemprop="image" content="/images/touxiang1.jpeg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="My Web Life">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">04 | 数学归纳法：如何用数学归纳提升代码的运行效率？</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-03-07T23:04:03+08:00">2019-03-07 23:04:03</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络学习/" itemprop="url" rel="index"><span itemprop="name">网络学习</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络学习/极客时间/" itemprop="url" rel="index"><span itemprop="name">极客时间</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络学习/极客时间/程序员的数学基础课/" itemprop="url" rel="index"><span itemprop="name">程序员的数学基础课</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>有些迭代我们可以通过理论证明某个结论，避免一次一次的计算，节约大量的计算资源。<br>归纳法的特点在于归纳2字，它已经总结了规律，不用逐步计算，可以节省很多时间和资源。</p>
+<a id="more"></a>
+<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>有些迭代我们可以通过理论证明某个结论，避免一次一次的计算，节约大量的计算资源。<br>归纳法的特点在于归纳2字，它已经总结了规律，不用逐步计算，可以节省很多时间和资源。</p>
+<h1 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h1><h2 id="什么是数学归纳法？"><a href="#什么是数学归纳法？" class="headerlink" title="什么是数学归纳法？"></a>什么是数学归纳法？</h2><p>根据现象，得出结论，进行验证后。一般用于无穷数列的问题。</p>
+<h2 id="和迭代法相比有什么优势吗？"><a href="#和迭代法相比有什么优势吗？" class="headerlink" title="和迭代法相比有什么优势吗？"></a>和迭代法相比有什么优势吗？</h2><p>数学归纳法最大的特点就是归纳，他总结了规律，不用逐步的计算。</p>
+<h3 id="使用迭代和数学归纳法来比较舍罕王给米的数据"><a href="#使用迭代和数学归纳法来比较舍罕王给米的数据" class="headerlink" title="使用迭代和数学归纳法来比较舍罕王给米的数据"></a>使用迭代和数学归纳法来比较舍罕王给米的数据</h3><h3 id="使用System-currentTimeMillis获取时间戳进行运行完成的计算"><a href="#使用System-currentTimeMillis获取时间戳进行运行完成的计算" class="headerlink" title="使用System.currentTimeMillis获取时间戳进行运行完成的计算"></a>使用System.currentTimeMillis获取时间戳进行运行完成的计算</h3><figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//迭代</span></span><br><span class="line">    Long start = <span class="number">1L</span>;</span><br><span class="line">    Long result = <span class="number">1L</span>;</span><br><span class="line">    Long f = System.currentTimeMillis();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; <span class="number">64</span>; i++) &#123;</span><br><span class="line">        start = start * <span class="number">2</span>;</span><br><span class="line">        result = result + start ;</span><br><span class="line">    &#125;</span><br><span class="line">    Long e = System.currentTimeMillis();</span><br><span class="line">    System.out.println(<span class="string">"迭代："</span>+(f-e) + result);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//数学归纳法</span></span><br><span class="line">    f = System.currentTimeMillis();</span><br><span class="line">    Double result2 =  (Math.pow(<span class="number">2</span>,<span class="number">63</span>))  - <span class="number">1</span>;</span><br><span class="line">    e = System.currentTimeMillis();</span><br><span class="line">    System.out.println(<span class="string">"归纳："</span>+(f-e) + result2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="递归调用和数学归纳法的逻辑是一样的吗？"><a href="#递归调用和数学归纳法的逻辑是一样的吗？" class="headerlink" title="递归调用和数学归纳法的逻辑是一样的吗？"></a>递归调用和数学归纳法的逻辑是一样的吗？</h2><p>逻辑是一致的。<br>只要数学归纳法的逻辑是对的，那么写的递归逻辑也是对的</p>
+<h1 id="基本内容"><a href="#基本内容" class="headerlink" title="基本内容"></a>基本内容</h1><h2 id="数学归纳法证明的步骤"><a href="#数学归纳法证明的步骤" class="headerlink" title="数学归纳法证明的步骤"></a>数学归纳法证明的步骤</h2><p>1.证明基本情况（n=1的时候）是否成立<br>2.假设n = k-1成立，在证明 n=k也成立（k&gt;1的自然数）</p>
+<h2 id="舍罕王的总米数，使用递归实现推导逻辑"><a href="#舍罕王的总米数，使用递归实现推导逻辑" class="headerlink" title="舍罕王的总米数，使用递归实现推导逻辑"></a>舍罕王的总米数，使用递归实现推导逻辑</h2><h3 id="数学归纳法证明舍罕王给的总数"><a href="#数学归纳法证明舍罕王给的总数" class="headerlink" title="数学归纳法证明舍罕王给的总数"></a>数学归纳法证明舍罕王给的总数</h3><p>证明第一个命题：第K个麦粒总数2^（k-1）<br>1.n=1时 2^(1-1)=1成立<br>2.n=k -1时 当前数为 2^(k-2) 那么当n=k时，是为k-1格的2倍所以为 2*2^(k-2) = 2^(k-1) 成立</p>
+<p>证明第二个命题： 第K个麦粒和之前的格子加起来的总数2^（k+1）-1<br>1.n=1时 2^(1-1)=1成立<br>2.n=k -1时 当前数为 2^(k)-1 那么当n=k时，是为k-1格的2倍所以为 2^(k)-1 + 2^(k) = 2^（k+1）-1 成立</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>1.经过数学归纳法可以看出其实总数是2^k-1<br>2.过程就是先从最后开始算起<br>3.证明过程最后返回的是true,是比较前后函数成功</p>
+<h4 id="一个参数即可，看循环几次都是否为true"><a href="#一个参数即可，看循环几次都是否为true" class="headerlink" title="一个参数即可，看循环几次都是否为true"></a>一个参数即可，看循环几次都是否为true</h4><figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span>  <span class="keyword">double</span> cur_nums = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">double</span> cur_all = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">tuidao</span><span class="params">(<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(k == <span class="number">1</span>)&#123;</span><br><span class="line">        lesson4.cur_nums=<span class="number">1</span>;</span><br><span class="line">        lesson4.cur_all=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">boolean</span> proveOfPreviousOne = tuidao(k-<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        cur_nums = cur_nums*<span class="number">2</span>;</span><br><span class="line">        cur_all = cur_all + cur_nums;</span><br><span class="line">        <span class="keyword">boolean</span> proveOfCurrentOne = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(cur_all == Math.pow(<span class="number">2</span>, k) - <span class="number">1</span>)&#123;</span><br><span class="line">            proveOfCurrentOne = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> proveOfCurrentOne &amp;&amp; proveOfPreviousOne ;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="逆向递推和正向递推"><a href="#逆向递推和正向递推" class="headerlink" title="逆向递推和正向递推"></a>逆向递推和正向递推</h2><p>迭代就是循环也就是正向递推。递归就是从后往前，就是你想递推。</p>
+<h1 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h1><h2 id="日常工作中，什么地方用到了归纳法来提升代码效率？"><a href="#日常工作中，什么地方用到了归纳法来提升代码效率？" class="headerlink" title="日常工作中，什么地方用到了归纳法来提升代码效率？"></a>日常工作中，什么地方用到了归纳法来提升代码效率？</h2><p>递归清理文件夹或者文件<br>使用栈来实现递归</p>
+<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><p>一般发现有递归的情况，可以查看是否使用动态规划。</p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p><img src="/2019/03/07/04-数学归纳法：如何用数学归纳提升代码的运行效率？/lesson4.jpg" alt></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/计算机/" rel="tag"><i class="fas fa-tags"></i>计算机</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/03/06/03-迭代法：不用编程语言的自带函数，你会如何计算平方根/" rel="next" title="03 | 迭代法：不用编程语言的自带函数，你会如何计算平方根?"><i class="fas fa-angle-left"></i><span class="nav-title">03 | 迭代法：不用编程语言的自带函数，你会如何计算平方根?</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2019/03/11/堆栈算法面试题/" rel="prev" title="堆栈算法面试题"><span class="nav-title">堆栈算法面试题</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/touxiang1.jpeg" alt="God Fish">
+  
+  <h1 class="author-name">God Fish</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">22</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">6</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">8</a></div>
+    </div>
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#摘要"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#疑问"><span class="toc-text">疑问</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#什么是数学归纳法？"><span class="toc-text">什么是数学归纳法？</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#和迭代法相比有什么优势吗？"><span class="toc-text">和迭代法相比有什么优势吗？</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#使用迭代和数学归纳法来比较舍罕王给米的数据"><span class="toc-text">使用迭代和数学归纳法来比较舍罕王给米的数据</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#使用System-currentTimeMillis获取时间戳进行运行完成的计算"><span class="toc-text">使用System.currentTimeMillis获取时间戳进行运行完成的计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#递归调用和数学归纳法的逻辑是一样的吗？"><span class="toc-text">递归调用和数学归纳法的逻辑是一样的吗？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#基本内容"><span class="toc-text">基本内容</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#数学归纳法证明的步骤"><span class="toc-text">数学归纳法证明的步骤</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#舍罕王的总米数，使用递归实现推导逻辑"><span class="toc-text">舍罕王的总米数，使用递归实现推导逻辑</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#数学归纳法证明舍罕王给的总数"><span class="toc-text">数学归纳法证明舍罕王给的总数</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#思路"><span class="toc-text">思路</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#一个参数即可，看循环几次都是否为true"><span class="toc-text">一个参数即可，看循环几次都是否为true</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#逆向递推和正向递推"><span class="toc-text">逆向递推和正向递推</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#思考题"><span class="toc-text">思考题</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#日常工作中，什么地方用到了归纳法来提升代码效率？"><span class="toc-text">日常工作中，什么地方用到了归纳法来提升代码效率？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#扩展"><span class="toc-text">扩展</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#动态规划"><span class="toc-text">动态规划</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:youremail@youremailhost" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/" target="_blank">Weibo</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://developer.mozilla.org/" target="_blank">MDN</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://mozilla.github.io/nunjucks/" target="_blank">Nunjucks</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">God Fish</span><span class="year"><i class="far fa-copyright"></i>2019 - 2019</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

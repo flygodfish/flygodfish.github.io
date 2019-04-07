@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>My Web Life</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-04-01T16:09:16.483Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>God Fish</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>硬汉计划第七天</title>
+    <link href="http://yoursite.com/2019/04/02/%E7%A1%AC%E6%B1%89%E8%AE%A1%E5%88%92%E7%AC%AC%E4%B8%83%E5%A4%A9/"/>
+    <id>http://yoursite.com/2019/04/02/硬汉计划第七天/</id>
+    <published>2019-04-01T16:06:25.000Z</published>
+    <updated>2019-04-01T16:09:16.483Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;跑步9.41公里， 40个俯卧撑， 0个仰卧起坐， 0个深蹲&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2019/04/02/硬汉计划第七天/jiayou.jpg&quot; alt&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数学专栏课外加餐（二） | 位操作的三个应用实例</title>
+    <link href="http://yoursite.com/2019/03/31/%E6%95%B0%E5%AD%A6%E4%B8%93%E6%A0%8F%E8%AF%BE%E5%A4%96%E5%8A%A0%E9%A4%90%EF%BC%88%E4%BA%8C%EF%BC%89-%E4%BD%8D%E6%93%8D%E4%BD%9C%E7%9A%84%E4%B8%89%E4%B8%AA%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/"/>
+    <id>http://yoursite.com/2019/03/31/数学专栏课外加餐（二）-位操作的三个应用实例/</id>
+    <published>2019-03-31T15:09:15.000Z</published>
+    <updated>2019-04-02T14:27:46.556Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;位操作应用实例&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="网络学习" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="极客时间" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/"/>
+    
+      <category term="程序员的数学基础课" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E8%AF%BE/"/>
+    
+    
+      <category term="计算机" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数学专栏课外加餐（一） | 我们为什么需要反码和补码？</title>
+    <link href="http://yoursite.com/2019/03/31/%E6%95%B0%E5%AD%A6%E4%B8%93%E6%A0%8F%E8%AF%BE%E5%A4%96%E5%8A%A0%E9%A4%90%EF%BC%88%E4%B8%80%EF%BC%89-%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81%EF%BC%9F/"/>
+    <id>http://yoursite.com/2019/03/31/数学专栏课外加餐（一）-我们为什么需要反码和补码？/</id>
+    <published>2019-03-31T14:38:30.000Z</published>
+    <updated>2019-04-02T14:19:39.693Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;反码和补码的补充&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="网络学习" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="极客时间" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/"/>
+    
+      <category term="程序员的数学基础课" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E8%AF%BE/"/>
+    
+    
+      <category term="计算机" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>06 | 递归（下）：分而治之，从归并排序到MapReduce</title>
+    <link href="http://yoursite.com/2019/03/31/06-%E9%80%92%E5%BD%92%EF%BC%88%E4%B8%8B%EF%BC%89%EF%BC%9A%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B%EF%BC%8C%E4%BB%8E%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E5%88%B0MapReduce/"/>
+    <id>http://yoursite.com/2019/03/31/06-递归（下）：分而治之，从归并排序到MapReduce/</id>
+    <published>2019-03-31T14:38:17.000Z</published>
+    <updated>2019-04-02T14:08:03.564Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;复杂的问题可以通过化简来逐步求解。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="网络学习" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="极客时间" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/"/>
+    
+      <category term="程序员的数学基础课" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E8%AF%BE/"/>
+    
+    
+      <category term="计算机" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>硬汉计划第六天</title>
+    <link href="http://yoursite.com/2019/03/31/%E7%A1%AC%E6%B1%89%E8%AE%A1%E5%88%92%E7%AC%AC%E5%85%AD%E5%A4%A9/"/>
+    <id>http://yoursite.com/2019/03/31/硬汉计划第六天/</id>
+    <published>2019-03-31T14:12:53.000Z</published>
+    <updated>2019-03-31T14:14:58.217Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;跑步0公里， 60个俯卧撑， 0个仰卧起坐， 100个深蹲&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2019/03/31/硬汉计划第六天/jiayou.png&quot; alt&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>硬汉计划第五天</title>
+    <link href="http://yoursite.com/2019/03/30/%E7%A1%AC%E6%B1%89%E8%AE%A1%E5%88%92%E7%AC%AC%E4%BA%94%E5%A4%A9/"/>
+    <id>http://yoursite.com/2019/03/30/硬汉计划第五天/</id>
+    <published>2019-03-30T08:58:33.000Z</published>
+    <updated>2019-03-31T09:00:56.748Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;跑步9.23公里， 0个俯卧撑， 0个仰卧起坐， 100个深蹲&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2019/03/30/硬汉计划第五天/jiayou.jpg&quot; alt&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>硬汉计划第四天</title>
+    <link href="http://yoursite.com/2019/03/29/%E7%A1%AC%E6%B1%89%E8%AE%A1%E5%88%92%E7%AC%AC%E5%9B%9B%E5%A4%A9/"/>
+    <id>http://yoursite.com/2019/03/29/硬汉计划第四天/</id>
+    <published>2019-03-29T06:52:47.000Z</published>
+    <updated>2019-03-29T09:58:41.557Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;跑步0公里， 4个俯卧撑， 50个仰卧起坐， 100个深蹲&lt;br&gt;身体需要休息。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2019/03/29/硬汉计划第四天/jiayou.jpg&quot; alt&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode面试题-05</title>
+    <link href="http://yoursite.com/2019/03/29/Leetcode%E9%9D%A2%E8%AF%95%E9%A2%98-05/"/>
+    <id>http://yoursite.com/2019/03/29/Leetcode面试题-05/</id>
+    <published>2019-03-29T06:52:11.000Z</published>
+    <updated>2019-03-31T14:16:36.553Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;栈先进后出，堆先进先出&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="堆" scheme="http://yoursite.com/tags/%E5%A0%86/"/>
+    
+      <category term="栈" scheme="http://yoursite.com/tags/%E6%A0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode面试题-04</title>
+    <link href="http://yoursite.com/2019/03/29/Leetcode%E9%9D%A2%E8%AF%95%E9%A2%98-04/"/>
+    <id>http://yoursite.com/2019/03/29/Leetcode面试题-04/</id>
+    <published>2019-03-29T06:52:07.000Z</published>
+    <updated>2019-03-31T14:15:55.869Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;数组主要活用下标，可以创建额外的空间&lt;br&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/Leetcode/"/>
+    
+    
+      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>硬汉计划第三天</title>
+    <link href="http://yoursite.com/2019/03/28/%E7%A1%AC%E6%B1%89%E8%AE%A1%E5%88%92%E7%AC%AC%E4%B8%89%E5%A4%A9/"/>
+    <id>http://yoursite.com/2019/03/28/硬汉计划第三天/</id>
+    <published>2019-03-28T06:52:42.000Z</published>
+    <updated>2019-03-29T07:15:39.314Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;27号休息了，去吃饭了。（身体巨累）&lt;/p&gt;
+&lt;p&gt;跑步0公里， 30个俯卧撑， 40个仰卧起坐， 55个深蹲&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2019/03/28/硬汉计划第三天/jiayou.jpg&quot; alt&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>硬汉计划第二天</title>
+    <link href="http://yoursite.com/2019/03/26/%E7%A1%AC%E6%B1%89%E8%AE%A1%E5%88%92%E7%AC%AC%E4%BA%8C%E5%A4%A9/"/>
+    <id>http://yoursite.com/2019/03/26/硬汉计划第二天/</id>
+    <published>2019-03-26T06:52:31.000Z</published>
+    <updated>2019-03-31T09:01:43.928Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;跑步7.9公里， 30个俯卧撑， 40个仰卧起坐， 0个深蹲&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2019/03/26/硬汉计划第二天/jiayou.jpg&quot; alt&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>硬汉计划第一天</title>
+    <link href="http://yoursite.com/2019/03/25/%E7%A1%AC%E6%B1%89%E8%AE%A1%E5%88%92%E7%AC%AC%E4%B8%80%E5%A4%A9/"/>
+    <id>http://yoursite.com/2019/03/25/硬汉计划第一天/</id>
+    <published>2019-03-25T06:52:26.000Z</published>
+    <updated>2019-03-29T07:05:07.842Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;每天10公里， 100个俯卧撑， 100个仰卧起坐， 100个深蹲。&lt;br&gt;&lt;img src=&quot;/2019/03/25/硬汉计划第一天/yiquan.jpg&quot; alt&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode面试题-03</title>
+    <link href="http://yoursite.com/2019/03/24/Leetcode%E9%9D%A2%E8%AF%95%E9%A2%98-03/"/>
+    <id>http://yoursite.com/2019/03/24/Leetcode面试题-03/</id>
+    <published>2019-03-24T12:34:00.000Z</published>
+    <updated>2019-03-24T13:43:31.658Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Leetcode 算法 - 字符串&lt;br&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/Leetcode/"/>
+    
+    
+      <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode面试题-02</title>
+    <link href="http://yoursite.com/2019/03/20/Leetcode%E9%9D%A2%E8%AF%95%E9%A2%98-02/"/>
+    <id>http://yoursite.com/2019/03/20/Leetcode面试题-02/</id>
+    <published>2019-03-20T15:02:42.000Z</published>
+    <updated>2019-03-20T15:18:01.841Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Leetcode面试题-02  共2道&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/Leetcode/"/>
+    
+    
+      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="数学归纳法" scheme="http://yoursite.com/tags/%E6%95%B0%E5%AD%A6%E5%BD%92%E7%BA%B3%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>05 | 递归（上）：泛化数学归纳，如何将复杂问题简单化？</title>
+    <link href="http://yoursite.com/2019/03/17/05-%E9%80%92%E5%BD%92%EF%BC%88%E4%B8%8A%EF%BC%89%EF%BC%9A%E6%B3%9B%E5%8C%96%E6%95%B0%E5%AD%A6%E5%BD%92%E7%BA%B3%EF%BC%8C%E5%A6%82%E4%BD%95%E5%B0%86%E5%A4%8D%E6%9D%82%E9%97%AE%E9%A2%98%E7%AE%80%E5%8D%95%E5%8C%96%EF%BC%9F/"/>
+    <id>http://yoursite.com/2019/03/17/05-递归（上）：泛化数学归纳，如何将复杂问题简单化？/</id>
+    <published>2019-03-17T12:48:08.000Z</published>
+    <updated>2019-03-29T06:51:33.689Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在某些情况下，循环和递归是可以相互转换的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="网络学习" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="极客时间" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/"/>
+    
+      <category term="程序员的数学基础课" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E8%AF%BE/"/>
+    
+    
+      <category term="计算机" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode面试题-01</title>
+    <link href="http://yoursite.com/2019/03/13/Leetcode%E9%9D%A2%E8%AF%95%E9%A2%98-01/"/>
+    <id>http://yoursite.com/2019/03/13/Leetcode面试题-01/</id>
+    <published>2019-03-13T13:52:32.000Z</published>
+    <updated>2019-03-13T14:02:16.300Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Leetcode面试题-01  共3道&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/Leetcode/"/>
+    
+    
+      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>堆栈算法面试题</title>
+    <link href="http://yoursite.com/2019/03/11/%E5%A0%86%E6%A0%88%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>http://yoursite.com/2019/03/11/堆栈算法面试题/</id>
+    <published>2019-03-11T15:06:45.000Z</published>
+    <updated>2019-03-11T15:33:53.334Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;堆栈面试题：&lt;br&gt;堆是先进后出的。栈是先进先出的。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="面试题" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    
+      <category term="堆栈" scheme="http://yoursite.com/tags/%E5%A0%86%E6%A0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>04 | 数学归纳法：如何用数学归纳提升代码的运行效率？</title>
+    <link href="http://yoursite.com/2019/03/07/04-%E6%95%B0%E5%AD%A6%E5%BD%92%E7%BA%B3%E6%B3%95%EF%BC%9A%E5%A6%82%E4%BD%95%E7%94%A8%E6%95%B0%E5%AD%A6%E5%BD%92%E7%BA%B3%E6%8F%90%E5%8D%87%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%95%88%E7%8E%87%EF%BC%9F/"/>
+    <id>http://yoursite.com/2019/03/07/04-数学归纳法：如何用数学归纳提升代码的运行效率？/</id>
+    <published>2019-03-07T15:04:03.000Z</published>
+    <updated>2019-03-17T12:47:20.851Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有些迭代我们可以通过理论证明某个结论，避免一次一次的计算，节约大量的计算资源。&lt;br&gt;归纳法的特点在于归纳2字，它已经总结了规律，不用逐步计算，可以节省很多时间和资源。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="网络学习" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="极客时间" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/"/>
+    
+      <category term="程序员的数学基础课" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E8%AF%BE/"/>
+    
+    
+      <category term="计算机" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>03 | 迭代法：不用编程语言的自带函数，你会如何计算平方根?</title>
+    <link href="http://yoursite.com/2019/03/06/03-%E8%BF%AD%E4%BB%A3%E6%B3%95%EF%BC%9A%E4%B8%8D%E7%94%A8%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E8%87%AA%E5%B8%A6%E5%87%BD%E6%95%B0%EF%BC%8C%E4%BD%A0%E4%BC%9A%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E5%B9%B3%E6%96%B9%E6%A0%B9/"/>
+    <id>http://yoursite.com/2019/03/06/03-迭代法：不用编程语言的自带函数，你会如何计算平方根/</id>
+    <published>2019-03-06T14:56:16.000Z</published>
+    <updated>2019-03-17T08:43:32.952Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;人不擅长重复性的劳动，但是计算机擅长，以重复为特点的迭代法在编程中有广泛的应用。&lt;br&gt;迭代的场景包括求近似解，范围内查找目标值，机器算法中的迭代（局部最优解）等。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="网络学习" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="极客时间" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/"/>
+    
+      <category term="程序员的数学基础课" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E8%AF%BE/"/>
+    
+    
+      <category term="计算机" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>02 | 余数：原来取余操作本身就是个哈希函数 </title>
+    <link href="http://yoursite.com/2019/03/05/02-%E4%BD%99%E6%95%B0%EF%BC%9A%E5%8E%9F%E6%9D%A5%E5%8F%96%E4%BD%99%E6%93%8D%E4%BD%9C%E6%9C%AC%E8%BA%AB%E5%B0%B1%E6%98%AF%E4%B8%AA%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0/"/>
+    <id>http://yoursite.com/2019/03/05/02-余数：原来取余操作本身就是个哈希函数/</id>
+    <published>2019-03-05T10:07:45.000Z</published>
+    <updated>2019-03-13T15:08:16.167Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;余数总是在一个固定的范围内。&lt;br&gt;余数的应用场景，WEB分页，散列函数，加密算法，也有循环冗余校验等&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="网络学习" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="极客时间" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/"/>
+    
+      <category term="程序员的数学基础课" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E8%AF%BE/"/>
+    
+    
+      <category term="计算机" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+  </entry>
+  
+</feed>

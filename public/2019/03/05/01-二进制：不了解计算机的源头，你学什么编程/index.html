@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, Study, GodFish">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="My Web Life" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato|Roboto+Condensed|Skranji|Ubuntu|Ubuntu+Mono">
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">复制</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "已复制";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "复制";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>01 | 二进制：不了解计算机的源头，你学什么编程 | My Web Life</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">My Web Life</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/05/01-二进制：不了解计算机的源头，你学什么编程/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="God Fish">
+       <meta itemprop="description" content>
+       <meta itemprop="image" content="/images/touxiang1.jpeg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="My Web Life">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">01 | 二进制：不了解计算机的源头，你学什么编程</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-03-05T12:25:04+08:00">2019-03-05 12:25:04</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络学习/" itemprop="url" rel="index"><span itemprop="name">网络学习</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络学习/极客时间/" itemprop="url" rel="index"><span itemprop="name">极客时间</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网络学习/极客时间/程序员的数学基础课/" itemprop="url" rel="index"><span itemprop="name">程序员的数学基础课</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>计算机起源是数学中的二进制法。<br>二进制用于很多概念和思想,如逻辑判断，二分法，二叉树等<br><a id="more"></a></p>
+<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>计算机起源是数学中的二进制法。<br>二进制用于很多概念和思想,如逻辑判断，二分法，二叉树等</p>
+<h1 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h1><h2 id="什么是二进制"><a href="#什么是二进制" class="headerlink" title="什么是二进制"></a>什么是二进制</h2><p>十进制是以10为基数，二进制是以2为基数<br>二进制就是2^n的形式 </p>
+<p>java二进制转十进制和十进制转二进制</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: 十进制转换成二进制</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> decimalSource</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> String</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">decimalToBinary</span><span class="params">(<span class="keyword">int</span> decimalSource)</span> </span>&#123;</span><br><span class="line">    BigInteger bi = <span class="keyword">new</span> BigInteger(String.valueOf(decimalSource)); <span class="comment">// 转换成 BigInteger 类型，默认是十进制</span></span><br><span class="line">    <span class="keyword">return</span> bi.toString(<span class="number">2</span>); <span class="comment">// 参数 2 指定的是转化成二进制</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: 二进制转换成十进制</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> binarySource</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> int</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binaryToDecimal</span><span class="params">(String binarySource)</span> </span>&#123;</span><br><span class="line">    BigInteger bi = <span class="keyword">new</span> BigInteger(binarySource, <span class="number">2</span>);  <span class="comment">// 转换为 BigInteger 类型，参数 2 指定的是二进制</span></span><br><span class="line">    <span class="keyword">return</span> Integer.parseInt(bi.toString());     <span class="comment">// 默认转换成十进制</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="为什么计算机使用二进制？"><a href="#为什么计算机使用二进制？" class="headerlink" title="为什么计算机使用二进制？"></a>为什么计算机使用二进制？</h2><p>计算机的逻辑电路只有2个状态，断开与接通，一般断开是0，接通为1<br>二进制的数据表达具有抗干扰能力强，可靠性高的优点，也符合逻辑运算！</p>
+<h1 id="基本内容"><a href="#基本内容" class="headerlink" title="基本内容"></a>基本内容</h1><h2 id="位操作"><a href="#位操作" class="headerlink" title="位操作"></a>位操作</h2><p>向左位移 &lt;&lt;<br>向右位移 &gt;&gt; 或 &gt;&gt;&gt;<br>逻辑位移 &gt;&gt; 算数右移 &gt;&gt;&gt;<br>逻辑右移：最高位补0<br>算数右移： 最高位原位</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: 向左移位</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> num- 等待移位的十进制数, m- 向左移的位数</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> int- 移位后的十进制数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">leftShift</span><span class="params">(<span class="keyword">int</span> num, <span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num &lt;&lt; m;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: 向右移位</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> num- 等待移位的十进制数, m- 向右移的位数</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> int- 移位后的十进制数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">rightShift</span><span class="params">(<span class="keyword">int</span> num, <span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num &gt;&gt;&gt; m;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><p>二进制的0,1分别对应逻辑中的真和假<br>或 0 | 1 = 1<br>与 0 &amp; 1 = 0<br>异或 0 ^ 1 = 1 （只要2进制相同位上的2个数不同，即为真）</p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: 二进制按位“或”的操作</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> num1- 第一个数字，num2- 第二个数字</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 二进制按位“或”的结果</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">or</span><span class="params">(<span class="keyword">int</span> num1, <span class="keyword">int</span> num2)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (num1 | num2);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: 二进制按位“与”的操作</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> num1- 第一个数字，num2- 第二个数字</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 二进制按位“与”的结果</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">and</span><span class="params">(<span class="keyword">int</span> num1, <span class="keyword">int</span> num2)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (num1 &amp; num2);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: 二进制按位“异或”的操作</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> num1- 第一个数字，num2- 第二个数字</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 二进制按位“异或”的结果</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">xor</span><span class="params">(<span class="keyword">int</span> num1, <span class="keyword">int</span> num2)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (num1 ^ num2);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h1><h2 id="用什么方法来实现十进制到二进制的转化？-不使用BigInteger类"><a href="#用什么方法来实现十进制到二进制的转化？-不使用BigInteger类" class="headerlink" title="用什么方法来实现十进制到二进制的转化？(不使用BigInteger类)"></a>用什么方法来实现十进制到二进制的转化？(不使用BigInteger类)</h2><p>补充： BigInteger类无法打印负数的2进制！！就无法用于验证了，具体验证方法看扩展的反码补码源码</p>
+<p>个人思路整理：</p>
+<ol>
+<li>用位移运算 首先与1做与操作，获取一位2进制的结果 </li>
+<li>再用右位移1位的操作， 再与1做与操作， 获取第二位2进制的结果 </li>
+<li>上述过程以此类推，获取到的字符串再做个倒序即可（获取的第一位是二进制的最后一位。）</li>
+</ol>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">manual_decimal2binary</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">    String result = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> tmp = (num &gt;&gt; i) &amp; <span class="number">1</span>;</span><br><span class="line">        result += String.valueOf(tmp);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> StringBuilder(result).reverse().toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>网上答案： </p>
+<figure class="hljs highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Title</span>: decimalToBinary</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: 十进制转二进制，方法1：余数短除法除以二</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> decimalSource</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span>: String</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/*public static String decimalToBinary(int decimalSource) &#123;</span></span><br><span class="line"><span class="comment">    StringBuilder sb = new StringBuilder();</span></span><br><span class="line"><span class="comment">    while (decimalSource != 0) &#123;</span></span><br><span class="line"><span class="comment">        sb.append(decimalSource % 2);</span></span><br><span class="line"><span class="comment">        decimalSource = decimalSource &gt;&gt; 1;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">    return sb.reverse().toString();</span></span><br><span class="line"><span class="comment">&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Title</span>: decimalToBinary</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: 十进制转二进制，方法2：降二次幂及减法混合运算</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> decimalSource</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span>: String</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/*public static String decimalToBinary(int decimalSource) &#123;</span></span><br><span class="line"><span class="comment">    int length = (int) (Math.log(decimalSource) / Math.log(2));</span></span><br><span class="line"><span class="comment">    StringBuffer sb = new StringBuffer();</span></span><br><span class="line"><span class="comment">    do &#123;</span></span><br><span class="line"><span class="comment">        decimalSource = (int) (decimalSource - Math.pow(2, length));</span></span><br><span class="line"><span class="comment">        int power = decimalSource &lt;= 0 ? -1 : (int) (Math.log(decimalSource) / Math.log(2));</span></span><br><span class="line"><span class="comment">        for (int i = length; i &gt; power; i--) &#123;</span></span><br><span class="line"><span class="comment">            if (i == length) &#123;</span></span><br><span class="line"><span class="comment">                sb.append("1");</span></span><br><span class="line"><span class="comment">            &#125; else &#123;</span></span><br><span class="line"><span class="comment">                sb.append("0");</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">        length = power;</span></span><br><span class="line"><span class="comment">    &#125; while (decimalSource &gt; 0);</span></span><br><span class="line"><span class="comment">    return sb.toString();</span></span><br><span class="line"><span class="comment">&#125;*/</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Title</span>: decimalToBinary</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: 十进制转二进制，方法3：位运算法</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> decimalSource</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span>: String</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">decimalToBinary</span><span class="params">(<span class="keyword">int</span> decimalSource)</span> </span>&#123;</span><br><span class="line">    StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">    <span class="keyword">while</span> (decimalSource != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">//此&amp;运算，decimalSource &amp; 1，目的是获取最低位的二进制数值</span></span><br><span class="line">        sb.append(decimalSource &amp; <span class="number">1</span>);</span><br><span class="line">        <span class="comment">//此&gt;&gt;运算，decimalSource &gt;&gt; 1，目的是将获取到的最低位二进制数值除去</span></span><br><span class="line">        decimalSource = decimalSource &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sb.reverse().toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><h2 id="原码与反码与补码"><a href="#原码与反码与补码" class="headerlink" title="原码与反码与补码"></a>原码与反码与补码</h2><p> 原码：一个正数，按照绝对值大小转换成的二进制数；一个负数按照绝对值大小转换成的二进制数，然后最高位补1，称为原码。<br> 比如 00000000 00000000 00000000 00000101 是 5的 原码；10000000 00000000 00000000 00000101 是 -5的 原码。 　</p>
+<p> 反码：正数的反码与原码相同，负数的反码为对该数的原码除符号位外各位取反。<br> 取反操作指：原为1，得0；原为0，得1。（1变0; 0变1）<br> 比如：正数00000000 00000000 00000000 00000101 的反码还是 00000000 00000000 00000000 00000101 ；<br> 负数10000000 00000000 00000000 00000101每一位取反（除符号位），得11111111 11111111 11111111 11111010。<br> 称：10000000 00000000 00000000 00000101 和 11111111 11111111 11111111 11111010互为反码。 　</p>
+<p> 补码：正数的补码与原码相同，负数的补码为对该数的原码除符号位外各位取反，然后在最后一位加1.<br> 比如：10000000 00000000 00000000 00000101 的反码是：11111111 11111111 11111111 11111010。<br> 那么，补码为：<br> 11111111 11111111 11111111 11111010 + 1 = 11111111 11111111 11111111 11111011<br> 所以，-5 在计算机中表达为：11111111 11111111 11111111 11111011。转换为十六进制：0xFFFFFFFB。</p>
+<p> 假设这也是一个int类型，那么： </p>
+<ol>
+<li>先取-1的原码：10000000 00000000 00000000 00000001 </li>
+<li>得反码： 11111111 11111111 11111111 11111110（除符号位按位取反） </li>
+<li>得补码： 11111111 11111111 11111111 11111111<br>可见，－1在计算机里用二进制表达就是全1。16进制为：0xFFFFFF</li>
+</ol>
+<h2 id="位移运算-小窍门"><a href="#位移运算-小窍门" class="headerlink" title="位移运算 小窍门"></a>位移运算 小窍门</h2><p>向左位移1位 等于原数乘以2<br>向右位移1位 等于原数除以2的整数商</p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p><img src="/2019/03/05/01-二进制：不了解计算机的源头，你学什么编程/lesson1.jpg" alt></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/计算机/" rel="tag"><i class="fas fa-tags"></i>计算机</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/03/04/文章结构构建/" rel="next" title="文章结构"><i class="fas fa-angle-left"></i><span class="nav-title">文章结构</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2019/03/05/02-余数：原来取余操作本身就是个哈希函数/" rel="prev" title="02 | 余数：原来取余操作本身就是个哈希函数 "><span class="nav-title">02 | 余数：原来取余操作本身就是个哈希函数 </span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/touxiang1.jpeg" alt="God Fish">
+  
+  <h1 class="author-name">God Fish</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">22</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">6</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">8</a></div>
+    </div>
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#摘要"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#疑问"><span class="toc-text">疑问</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#什么是二进制"><span class="toc-text">什么是二进制</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#为什么计算机使用二进制？"><span class="toc-text">为什么计算机使用二进制？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#基本内容"><span class="toc-text">基本内容</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#位操作"><span class="toc-text">位操作</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#位运算"><span class="toc-text">位运算</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#思考题"><span class="toc-text">思考题</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#用什么方法来实现十进制到二进制的转化？-不使用BigInteger类"><span class="toc-text">用什么方法来实现十进制到二进制的转化？(不使用BigInteger类)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#扩展"><span class="toc-text">扩展</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#原码与反码与补码"><span class="toc-text">原码与反码与补码</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#位移运算-小窍门"><span class="toc-text">位移运算 小窍门</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:youremail@youremailhost" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/" target="_blank">Weibo</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://developer.mozilla.org/" target="_blank">MDN</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://mozilla.github.io/nunjucks/" target="_blank">Nunjucks</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">God Fish</span><span class="year"><i class="far fa-copyright"></i>2019 - 2019</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>
